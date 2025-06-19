@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -13,7 +14,7 @@ app.use(bodyParser.json());
 
 // MongoDB Connection
     
-mongoose.connect('mongodb+srv://dbUser:teJ%403125@cluster0.sexa6is.mongodb.net/bookdb')
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected'))
   .catch((err) => console.error('MongoDB connection error:', err));
 
