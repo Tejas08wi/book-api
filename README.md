@@ -151,6 +151,13 @@ This will:
 
 ### 📸 Test Coverage Screenshot
 
+After running tests, open the coverage report:
+
+start coverage/lcov-report/index.html
+
+![Screenshot 2025-06-22 164226](https://github.com/user-attachments/assets/2782a25a-1091-4daa-b6e6-03cabec4a954)
+
+📌 Example:
 ![Screenshot 2025-06-22 162724](https://github.com/user-attachments/assets/726a9426-38fa-4322-a705-4effdf6d39ed)
 
 ``
