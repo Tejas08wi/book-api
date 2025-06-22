@@ -1,35 +1,38 @@
+---
+
 # 📚 Book API Server
 
 A simple RESTful API built with **Node.js**, **Express**, and **MongoDB** to manage a collection of books. This API supports full **CRUD operations** and is ideal for learning or extending into a full-stack application.
 
 ---
-``
 
 ## 🚀 APIs Created and Their Functionality
 
-| Method | Endpoint              | Description                      |
-|--------|------------------------|----------------------------------|
-| GET    | `/api/books`           | Fetch all books                  |
-| GET    | `/api/books/:id`       | Fetch a single book by ID        |
-| POST   | `/api/books`           | Add a new book                   |
-| PUT    | `/api/books/:id`       | Update an existing book by ID    |
-| DELETE | `/api/books/:id`       | Delete a book by ID              |
+| Method | Endpoint         | Description                   |
+| ------ | ---------------- | ----------------------------- |
+| GET    | `/api/books`     | Fetch all books               |
+| GET    | `/api/books/:id` | Fetch a single book by ID     |
+| POST   | `/api/books`     | Add a new book                |
+| PUT    | `/api/books/:id` | Update an existing book by ID |
+| DELETE | `/api/books/:id` | Delete a book by ID           |
 
+---
 
 ## 🧩 Database Used
 
 **MongoDB** was used as the database, and it was integrated using the **Mongoose ODM**.
 
 ### 🔌 Integration Steps:
-- Installed Mongoose via `npm install mongoose`
-- Connected MongoDB to the server using the URI:
+
+* Installed Mongoose via `npm install mongoose`
+* Connected MongoDB to the server using the URI:
 
 ```js
 mongoose.connect('mongodb://127.0.0.1:27017/bookdb', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
-````
+```
 
 * Created a `Book` model schema to represent documents in the `bookdb` collection.
 
@@ -45,7 +48,6 @@ mongoose.connect('mongodb://127.0.0.1:27017/bookdb', {
 ### 📦 Installation Steps
 
 ```bash
-```
 # Clone the repository
 git clone https://github.com/Tejas08wi/book-api.git
 cd book-api
@@ -77,17 +79,6 @@ You can use **Postman**, **curl**, or any REST client.
 {
   "title": "The Alchemist",
   "author": "Paulo Coelho"
-}
-```
-
-* **Response**:
-
-```json
-{
-  "_id": "60f...",
-  "title": "The Alchemist",
-  "author": "Paulo Coelho",
-  "createdAt": "2025-06-19T18:00:00.000Z"
 }
 ```
 
@@ -129,19 +120,64 @@ You can use **Postman**, **curl**, or any REST client.
 
 ---
 
+## 🧪 Testing the API
+
+This project includes **unit**, **integration**, and **API tests** using modern testing frameworks.
+
+### 🛠️ Testing Tools Used
+
+| Tool                      | Purpose                                 |
+| ------------------------- | --------------------------------------- |
+| **Jest**                  | Test runner and assertion library       |
+| **Supertest**             | API endpoint testing                    |
+| **mongodb-memory-server** | In-memory MongoDB for integration tests |
+
+---
+
+### 🔍 Running Tests
+
+```bash
+npm test
+```
+
+This will:
+
+* Run all tests (unit, integration, API)
+* Generate a detailed coverage report
+* Output a summary in the terminal
+* Create a `coverage/` folder with an HTML report
+
+---
+
+### 📸 Test Coverage Screenshot
+
+![Screenshot 2025-06-22 162724](https://github.com/user-attachments/assets/726a9426-38fa-4322-a705-4effdf6d39ed)
+
+``
+
+📌 **Example:**
+
+![Test Coverage](./screenshots/coverage.png)
+
+---
+
 ## 📁 Project Structure
 
-```
-```
+``
 book-api/
 ├── models/
 │   └── Book.js
 ├── routes/
 │   └── books.js
+├── tests/
+│   ├── book.test.js
+│   └── setup.js
 ├── server.js
 ├── package.json
+├── .env
 └── README.md
 ```
+
 ```
 
 ## 📬 Contact
@@ -149,5 +185,3 @@ book-api/
 Made with ❤️ by [Tejaswi Kumar](https://github.com/Tejas08wi)
 
 ---
-![Screenshot 2025-06-22 162724](https://github.com/user-attachments/assets/c1c5437d-6508-4624-97c5-4d2e8079e7fa)
-
