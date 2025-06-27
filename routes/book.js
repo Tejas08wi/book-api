@@ -1,7 +1,15 @@
 const express = require('express');
 const router = express.Router();
 const Book = require('../models/Book');
-
+/**
+ * @swagger
+ * /api/books:
+ *   get:
+ *     summary: Get all books
+ *     responses:
+ *       200:
+ *         description: Success
+ */
 // GET all books
 router.get('/', async (req, res) => {
   const books = await Book.find();
@@ -9,6 +17,15 @@ router.get('/', async (req, res) => {
 });
 
 // GET a book by ID
+/**
+ * @swagger
+ * /api/books:
+ *   get:
+ *     summary: Get all books by id
+ *     responses:
+ *       200:
+ *         description: Success
+ */
 router.get('/:id', async (req, res) => {
   try {
     const book = await Book.findById(req.params.id);

@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  keploy:
+    image: ghcr.io/keploy/keploy:latest
+    container_name: keploy-v2
+    privileged: true
+    ports:
+      - "16789:16789"
+    volumes:
+      - //var/run/docker.sock:/var/run/docker.sock
+      - .:/app
+    networks:
+      - keploy-network
+    command: >
+      record
+      -c "docker run -p 5000:5000 --name book-api --network keploy-network book-api-image"
+      --container-name book-api
+      --buildDelay 60
+
+networks:
+  keploy-network:
+    external: true

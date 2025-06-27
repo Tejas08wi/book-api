@@ -5,19 +5,25 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "keploy:record": "cross-env KEPLOY_MODE=record node server.js",
+    "keploy:test": "cross-env KEPLOY_MODE=test node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@keploy/sdk": "^2.0.10",
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
-    "mongoose": "^8.16.0"
+    "mongoose": "^8.16.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "jest": "^30.0.2",
     "mongodb-memory-server": "^10.1.4",
     "supertest": "^7.1.1"

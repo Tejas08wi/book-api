@@ -4,6 +4,9 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const bookRoutes = require('./routes/book');
+const swaggerUi = require('swagger-ui-express');
+const swaggerSpec = require('./swagger');
+
 
 const app = express();
 const PORT = 5000;
@@ -11,6 +14,7 @@ const PORT = 5000;
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // MongoDB Connection
     
